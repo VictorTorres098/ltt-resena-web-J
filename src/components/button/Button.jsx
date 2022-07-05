@@ -2,10 +2,11 @@ import React from "react";
 import styled from 'styled-components';
 
 export const ButtonReact = (props) => {
+    const {buttonText} = props
     return (
         <div>
             <Button>
-                <span>{props.buttonText}</span>
+                <span>{buttonText}</span>
             </Button>
         </div>
     )

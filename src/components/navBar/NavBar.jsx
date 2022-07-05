@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import styled from 'styled-components';
 import BurgerButton from '../BurgerButton/BurgerButton'
 import ButtonReact from '../button/Button';
+import { Link } from "react-router-dom";
 
 export const NavBar = () =>{
     const[cliked, setCliked] = useState(false);
@@ -16,11 +17,11 @@ export const NavBar = () =>{
                 </div>
 
                 <div className={`links ${cliked ? 'active' : '' }`}>
-                    <a href="/">Home</a>
-                    <a href="/">Reseñas</a>
-                    <a href="/">Mi espacio</a>
-                    <a href="/">Contacto</a>
-                    <a href="/">Sobre Mi</a>
+                    <Link to="/">Home</Link> {" "}
+                    <Link to="/resenas">Reseñas</Link> {" "}
+                    <Link to="/miEspacio">Mi espacio</Link> {" "}
+                    <Link to="/contacto">Contacto</Link> {" "}
+                    <Link to="/about">Sobre Mi</Link> {" "}
                     <a href="/">
                         <div className='hidenOnDesktop'>
                             <ButtonReact buttonText="Login" />
@@ -46,7 +47,7 @@ export const NavBar = () =>{
 export default NavBar;
 
 const NavConteiner = styled.nav `
-    padding: 1.2rem;
+    padding: 0.5rem;
     background-color: whitesmoke;
     display: flex;
     align-items: center;
