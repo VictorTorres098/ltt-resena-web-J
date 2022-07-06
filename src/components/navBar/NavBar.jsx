@@ -69,12 +69,13 @@ export const NavBar = () =>{
 export default NavBar;
 
 const NavConteiner = styled.nav `
+    
     padding: 0.5rem;
     background-color: whitesmoke;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    z-index: 100;
     .navLogo h1{
         font-weight: 400;
         font-size: 30px;
@@ -119,12 +120,14 @@ const NavConteiner = styled.nav `
         left: 0;
         right: 0;
         text-align: center;
+        z-index:2;
         a{
             font-size: 2rem;
             margin-top: 1rem;
         }
     }
     .burger{
+        z-index: 2;
         @media (min-width: 768px){
             display: none;
         }
@@ -156,7 +159,7 @@ const BgDiv = styled.div`
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: -1;
+        z-index: 1;
         
     }
 `

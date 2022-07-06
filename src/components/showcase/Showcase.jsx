@@ -21,6 +21,7 @@ export const Showcase = () => {
 export default Showcase;
 
 const Section = styled.section`
+    position: relative;
     
     .heroImage{
       border: 1px solid pink;
