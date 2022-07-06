@@ -5,11 +5,16 @@ import styled from "styled-components";
 import { ContenLayout } from "../components/layout/ContenLayout";
 import { CardResena } from "../components/itemCard/CardResena";
 import { Bar } from "../components/bar/Bar";
+import Modal from "../components/modal/Modal";
 // import NavBar from "../components/navBar/NavBar";
 
 export const Index = () => {
     return (
         <MainLayout>  
+           {/*  <Modal modalTitle="Login">
+                <h1>Hola</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, illo debitis! Quaerat nam velit laboriosam esse animi optio est iste commodi consequuntur excepturi, saepe placeat quae dolores corrupti. Cum, iure?</p>
+            </Modal> */}
             <Showcase />
             <ContenLayout>
                 <Bar barText="Reseñas"/>

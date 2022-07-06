@@ -10,7 +10,7 @@ export const Showcase = () => {
       <div className='heroText'>
         <h2>Lorem ipsum</h2>
         <p>Lorem ipsum, dolor sit amet consectetur a? dolor sit amet consectetur</p>
-        <ButtonReact buttonText="Quiero saber mas!" />
+        <ButtonReact>Login</ButtonReact>
       </div>
     </div>
     </Section>

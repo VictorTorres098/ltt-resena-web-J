@@ -3,12 +3,21 @@ import styled from 'styled-components';
 import BurgerButton from '../BurgerButton/BurgerButton'
 import ButtonReact from '../button/Button';
 import { Link } from "react-router-dom";
+import Modal from "../modal/Modal";
+/* import Modal from "../modal/Modal"; */
 
 export const NavBar = () =>{
     const[cliked, setCliked] = useState(false);
+    
     const handleClick = () => {
         setCliked(!cliked);
     }
+
+    const chamuyo = () => {
+        alert("jajasent")
+    }
+    const [estadoModal, cambiarEstadoModal] = useState(false);
+
     return(
         <>
             <NavConteiner>
@@ -24,20 +33,33 @@ export const NavBar = () =>{
                     <Link to="/about">Sobre Mi</Link> {" "}
                     <a href="/">
                         <div className='hidenOnDesktop'>
-                            <ButtonReact buttonText="Login" />
+                            <ButtonReact>Login</ButtonReact>
                         </div>
                     </a>
                 </div>
 
                 <div className='nav-login'>
-                    <ButtonReact buttonText="Login" />
+                    <ButtonReact 
+                        pepeito={chamuyo} 
+                        title="login" 
+                    />  
                 </div>
                 
                 <div className="burger">
                     <BurgerButton cliked={cliked} handleClick={handleClick} />
                 </div>
 
-                <BgDiv className={`initial ${cliked ? 'active' : ''}`} ></BgDiv>
+                <BgDiv className={`initial ${cliked ? 'active' : ''}`} >
+
+                </BgDiv>
+
+                <Modal 
+                    estado={estadoModal}
+                    cambiarEstado={cambiarEstadoModal}
+                >
+                    <h1>LOGIN</h1>
+
+                </Modal>
 
             </NavConteiner>
         

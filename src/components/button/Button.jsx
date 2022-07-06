@@ -1,14 +1,9 @@
 import React from "react";
 import styled from 'styled-components';
 
-export const ButtonReact = (props) => {
-    const {buttonText} = props
+export const ButtonReact = ({title,action}) => {
     return (
-        <div>
-            <Button>
-                <span>{buttonText}</span>
-            </Button>
-        </div>
+        <Button onClick={action}>{title}</Button>     
     )
 }
 
@@ -21,6 +16,6 @@ const Button = styled.button`
     color: palevioletred;
     margin: 0 1em;
     padding: 0.25em 1em;    
-`
+`;
 
 

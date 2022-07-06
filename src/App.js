@@ -3,7 +3,6 @@ import{
   BrowserRouter,
   Routes,
   Route,
-  Link 
 } from "react-router-dom";
 import Index from "./pages/Index";
 import Resenas from "./pages/Resenas";
@@ -11,8 +10,6 @@ import MiEspacio from "./pages/MiEspacio";
 import Contacto from "./pages/Contacto";
 import About from "./pages/About";
 import AdminPanel from "./pages/AdminPanel";
-
-
 
 function App() {
   return (
