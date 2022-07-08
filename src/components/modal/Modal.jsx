@@ -32,11 +32,10 @@ export const Modal = ({children, estado, cambiarEstado, titleModal}) => {
 export default Modal;
 
 const Overlay = styled.div`
-    position: absolute;
+    position: fixed;
     display: flex;
     width: 100vw;
     height: 100vh;
-    position: fixed;
     top: 0;
     left: 0;
     background: rgba(0,0,0, .5) ;

@@ -20,11 +20,6 @@ export const NavBar = () =>{
         cambiarEstadoModal(!estadoModal)
     } /* paso las acciones de onclick ya que sin esto no funciona */
 
-    const [usuarioGlobal, setUsuarioGlobal] = useState(null);
-    const usuarioEstado = () =>{
-
-    }
-
     return(
         <>
             <NavConteiner>

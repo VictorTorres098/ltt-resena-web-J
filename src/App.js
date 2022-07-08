@@ -13,8 +13,7 @@ import AdminPanel from "./pages/AdminPanel";
 import Login  from "./components/login/Login";
 
 
-function App() {
-  const [usuarioGlobal, setUserGlobal] = useState(null); 
+function App() { 
   return (
     <>
       
