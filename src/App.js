@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import{
   BrowserRouter,
   Routes,
@@ -14,6 +14,7 @@ import Login  from "./components/login/Login";
 
 
 function App() {
+  const [usuarioGlobal, setUserGlobal] = useState(null); 
   return (
     <>
       
