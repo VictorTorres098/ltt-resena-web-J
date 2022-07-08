@@ -10,6 +10,8 @@ import MiEspacio from "./pages/MiEspacio";
 import Contacto from "./pages/Contacto";
 import About from "./pages/About";
 import AdminPanel from "./pages/AdminPanel";
+import Login  from "./components/login/Login";
+
 
 function App() {
   return (
@@ -22,7 +24,8 @@ function App() {
       <Route path="/miEspacio" element={<MiEspacio />}/>
       <Route path="/contacto" element={<Contacto />}/>
       <Route path="/about" element={<About />}/>
-      <Route path="/Admin" element={<AdminPanel />}/>  
+      <Route path="/Admin" element={<AdminPanel />}/>
+      <Route path="/login" element={<Login />}/>  
     </Routes>
   </BrowserRouter>
     </>

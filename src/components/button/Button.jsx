@@ -1,9 +1,9 @@
 import React from "react";
 import styled from 'styled-components';
 
-export const ButtonReact = ({title,pepeito}) => {
+export const ButtonReact = ({title,metodoModal }) => {
     return (
-        <Button onClick={pepeito}>{title}</Button>     
+        <Button  onClick={(metodoModal)}>{title}</Button>     
     )
 }
 

@@ -4,6 +4,7 @@ import BurgerButton from '../BurgerButton/BurgerButton'
 import ButtonReact from '../button/Button';
 import { Link } from "react-router-dom";
 import Modal from "../modal/Modal";
+import Login from "../login/Login";
 /* import Modal from "../modal/Modal"; */
 
 export const NavBar = () =>{
@@ -13,10 +14,16 @@ export const NavBar = () =>{
         setCliked(!cliked);
     }
 
-    const chamuyo = () => {
-        alert("jajasent")
-    }
     const [estadoModal, cambiarEstadoModal] = useState(false);
+
+    const buttonFuncion = () =>{
+        cambiarEstadoModal(!estadoModal)
+    } /* paso las acciones de onclick ya que sin esto no funciona */
+
+    const [usuarioGlobal, setUsuarioGlobal] = useState(null);
+    const usuarioEstado = () =>{
+
+    }
 
     return(
         <>
@@ -31,18 +38,18 @@ export const NavBar = () =>{
                     <Link to="/miEspacio">Mi espacio</Link> {" "}
                     <Link to="/contacto">Contacto</Link> {" "}
                     <Link to="/about">Sobre Mi</Link> {" "}
-                    <a href="/">
-                        <div className='hidenOnDesktop'>
-                            <ButtonReact>Login</ButtonReact>
-                        </div>
-                    </a>
+                    <div className="nav-login-movil"> {/* Solo es visible en modo movil */}
+                        <Link to="/login">
+                            <ButtonReact title="Login" />
+                        </Link>
+                    </div>
                 </div>
 
                 <div className='nav-login'>
                     <ButtonReact 
-                        pepeito={chamuyo} 
-                        title="login" 
-                    />  
+                        metodoModal={buttonFuncion}
+                        title="Login" 
+                    ></ButtonReact>  
                 </div>
                 
                 <div className="burger">
@@ -56,9 +63,9 @@ export const NavBar = () =>{
                 <Modal 
                     estado={estadoModal}
                     cambiarEstado={cambiarEstadoModal}
+                    titleModal={"Login"}
                 >
-                    <h1>LOGIN</h1>
-
+                    <Login /> 
                 </Modal>
 
             </NavConteiner>
@@ -124,6 +131,7 @@ const NavConteiner = styled.nav `
         a{
             font-size: 2rem;
             margin-top: 1rem;
+            color: white;
         }
     }
     .burger{
@@ -136,13 +144,12 @@ const NavConteiner = styled.nav `
         @media(max-width: 768px){
             display: none;
         }
-    } 
-    .hidenOnDesktop{
-        display: none;
-        @media (min-width: 768px){
+    }
+    .nav-login-movil{
+        @media(min-width: 768px){
             display: none;
         }
-    }
+    } 
 `
 const BgDiv = styled.div`
     position: absolute;
@@ -160,7 +167,6 @@ const BgDiv = styled.div`
         width: 100%;
         height: 100%;
         z-index: 1;
-        
     }
 `
 
