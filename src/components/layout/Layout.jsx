@@ -6,7 +6,6 @@ export const MainLayout = ({children}) => {
     <div>
        <NavBar />
         {children}
-        {/* solo componenetes estaticos */}
     </div>
   )
 }

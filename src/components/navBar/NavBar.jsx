@@ -2,12 +2,24 @@ import React, {useState} from "react";
 import styled from 'styled-components';
 import BurgerButton from '../BurgerButton/BurgerButton'
 import ButtonReact from '../button/Button';
+import { Link } from "react-router-dom";
+import Modal from "../modal/Modal";
+import Login from "../login/Login";
+/* import Modal from "../modal/Modal"; */
 
 export const NavBar = () =>{
     const[cliked, setCliked] = useState(false);
+    
     const handleClick = () => {
         setCliked(!cliked);
     }
+
+    const [estadoModal, cambiarEstadoModal] = useState(false);
+
+    const buttonFuncion = () =>{
+        cambiarEstadoModal(!estadoModal)
+    } /* paso las acciones de onclick ya que sin esto no funciona */
+
     return(
         <>
             <NavConteiner>
@@ -16,27 +28,40 @@ export const NavBar = () =>{
                 </div>
 
                 <div className={`links ${cliked ? 'active' : '' }`}>
-                    <a href="/">Home</a>
-                    <a href="/">Reseñas</a>
-                    <a href="/">Mi espacio</a>
-                    <a href="/">Contacto</a>
-                    <a href="/">Sobre Mi</a>
-                    <a href="/">
-                        <div className='hidenOnDesktop'>
-                            <ButtonReact buttonText="Login" />
-                        </div>
-                    </a>
+                    <Link to="/">Home</Link> {" "}
+                    <Link to="/resenas">Reseñas</Link> {" "}
+                    <Link to="/miEspacio">Mi espacio</Link> {" "}
+                    <Link to="/contacto">Contacto</Link> {" "}
+                    <Link to="/about">Sobre Mi</Link> {" "}
+                    <div className="nav-login-movil"> {/* Solo es visible en modo movil */}
+                        <Link to="/login">
+                            <ButtonReact title="Login" />
+                        </Link>
+                    </div>
                 </div>
 
                 <div className='nav-login'>
-                    <ButtonReact buttonText="Login" />
+                    <ButtonReact 
+                        metodoModal={buttonFuncion}
+                        title="Login" 
+                    ></ButtonReact>  
                 </div>
                 
                 <div className="burger">
                     <BurgerButton cliked={cliked} handleClick={handleClick} />
                 </div>
 
-                <BgDiv className={`initial ${cliked ? 'active' : ''}`} ></BgDiv>
+                <BgDiv className={`initial ${cliked ? 'active' : ''}`} >
+
+                </BgDiv>
+
+                <Modal 
+                    estado={estadoModal}
+                    cambiarEstado={cambiarEstadoModal}
+                    titleModal={"Login"}
+                >
+                    <Login /> 
+                </Modal>
 
             </NavConteiner>
         
@@ -46,12 +71,13 @@ export const NavBar = () =>{
 export default NavBar;
 
 const NavConteiner = styled.nav `
-    padding: 1.2rem;
+    
+    padding: 0.5rem;
     background-color: whitesmoke;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    z-index: 100;
     .navLogo h1{
         font-weight: 400;
         font-size: 30px;
@@ -96,12 +122,15 @@ const NavConteiner = styled.nav `
         left: 0;
         right: 0;
         text-align: center;
+        z-index:2;
         a{
             font-size: 2rem;
             margin-top: 1rem;
+            color: white;
         }
     }
     .burger{
+        z-index: 2;
         @media (min-width: 768px){
             display: none;
         }
@@ -110,13 +139,12 @@ const NavConteiner = styled.nav `
         @media(max-width: 768px){
             display: none;
         }
-    } 
-    .hidenOnDesktop{
-        display: none;
-        @media (min-width: 768px){
+    }
+    .nav-login-movil{
+        @media(min-width: 768px){
             display: none;
         }
-    }
+    } 
 `
 const BgDiv = styled.div`
     position: absolute;
@@ -133,8 +161,7 @@ const BgDiv = styled.div`
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: -1;
-        
+        z-index: 1;
     }
 `
 

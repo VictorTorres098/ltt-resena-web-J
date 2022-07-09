@@ -1,13 +1,9 @@
 import React from "react";
 import styled from 'styled-components';
 
-export const ButtonReact = (props) => {
+export const ButtonReact = ({title,metodoModal }) => {
     return (
-        <div>
-            <Button>
-                <span>{props.buttonText}</span>
-            </Button>
-        </div>
+        <Button  onClick={(metodoModal)}>{title}</Button>     
     )
 }
 
@@ -19,7 +15,7 @@ const Button = styled.button`
     border: 2px solid palevioletred;
     color: palevioletred;
     margin: 0 1em;
-    padding: 0.25em 1em;    
-`
+    padding: 0.25em 1em;
+`;
 
 

@@ -1,12 +1,13 @@
 import React from 'react'
 import { MainLayout } from '../components/layout/Layout'
 
-export const Contacto = () => {
+export const AdminPanel = () => {
   return (
     <MainLayout>
-        Contacto
+        <div>AdminPanel</div>
     </MainLayout>
+    
   )
 }
 
-export default Contacto;
+export default AdminPanel;
