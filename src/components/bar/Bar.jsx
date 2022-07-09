@@ -13,7 +13,7 @@ const Section = styled.div`
     display: flex;
     width: 100%;
     height: 50px;
-    background-color: #ffe4e1;
+    background: transparent;
     border-radius: 15px;
     border: 2px solid palevioletred;
     align-items: center;

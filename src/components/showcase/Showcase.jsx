@@ -13,7 +13,7 @@ export const Showcase = () => {
           <h2>Que es leete la vida</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, quasi! Ipsa esse enim velit modi eveniet, ex similique mollitia necessitatibus odio! Cum officia iste qui laboriosam soluta rerum explicabo vitae!</p>
           <a href="/">
-              <ButtonReact buttonText="Quiero saber mas!"/>
+              <ButtonReact title={"Quiero saber mas"}/>
           </a>
         </div> 
     </Section>

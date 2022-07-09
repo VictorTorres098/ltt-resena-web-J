@@ -28,15 +28,16 @@ export const NavBar = () =>{
                 </div>
 
                 <div className={`links ${cliked ? 'active' : '' }`}>
+                    <div className="nav-logo-movil">
+                        <h1>Léete La Vida</h1>
+                    </div>
                     <Link to="/">Home</Link> {" "}
                     <Link to="/resenas">Reseñas</Link> {" "}
                     <Link to="/miEspacio">Mi espacio</Link> {" "}
                     <Link to="/contacto">Contacto</Link> {" "}
                     <Link to="/about">Sobre Mi</Link> {" "}
                     <div className="nav-login-movil"> {/* Solo es visible en modo movil */}
-                        <Link to="/login">
-                            <ButtonReact title="Login" />
-                        </Link>
+                            <ButtonReact metodoModal={buttonFuncion} title="Login" />
                     </div>
                 </div>
 
@@ -79,8 +80,8 @@ const NavConteiner = styled.nav `
     justify-content: space-between;
     z-index: 100;
     .navLogo h1{
-        font-weight: 400;
-        font-size: 30px;
+        font-size: 40px;
+        font-family: 'The Nautigal', cursive;
     }
 
     a{
@@ -118,7 +119,7 @@ const NavConteiner = styled.nav `
         position: absolute;
         margin-left: auto;
         margin-right: auto;
-        top: 30%;
+        top: 20%;
         left: 0;
         right: 0;
         text-align: center;
@@ -144,6 +145,17 @@ const NavConteiner = styled.nav `
         @media(min-width: 768px){
             display: none;
         }
+        margin-top: 50px;
+    }
+    .nav-logo-movil{
+        @media(min-width: 768px){
+            display: none;
+        }
+        color: whitesmoke;
+        /* margin-bottom: 10%; */
+        font-family: 'The Nautigal', cursive;
+        font-size: large;
+
     } 
 `
 const BgDiv = styled.div`
