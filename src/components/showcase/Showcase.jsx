@@ -11,7 +11,7 @@ export const Showcase = () => {
 
         <div className='showcaseInfo'>
           <h2>Que es leete la vida</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, quasi! Ipsa esse enim velit modi eveniet, ex similique mollitia necessitatibus odio! Cum officia iste qui laboriosam soluta rerum explicabo vitae!</p>
+          <p>icia iste qui laboriosam soluta rerum explicabo vitae!</p>
            <a href="/">
               <ButtonReact title={"Quiero saber mas"}/>
           </a> 
@@ -24,7 +24,17 @@ export const Showcase = () => {
 export default Showcase;
 
 const Section = styled.div`
-  .heroImage{
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imgShowcase});
+    background-size: cover; */
+    background: url(${imgShowcase}) 50% no-repeat; 
+    background-size: cover;
+    height: 40vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  /* .heroImage{
       border: 1px solid pink;
       background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imgShowcase});
       height: 350px;
@@ -33,7 +43,7 @@ const Section = styled.div`
       background-size: cover;
       position: relative;
       margin: 5px 5px;
-    }
+    } */
     .showcaseInfo{
       text-align: center;
       top: 30%;
