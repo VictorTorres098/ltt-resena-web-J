@@ -43,7 +43,7 @@ const Section = styled.section`
       position: relative;
     }
     .buttonFix{
-      position: relative;
+      
     }
 
     
