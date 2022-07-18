@@ -7,18 +7,22 @@ import Modal from "../modal/Modal";
 import Login from "../login/Login";
 /* import Modal from "../modal/Modal"; */
 
-export const NavBar = () =>{
+
+
+
+export const NavBar = (startAdminService) =>{
+
     const[cliked, setCliked] = useState(false);
     
     const handleClick = () => {
         setCliked(!cliked);
-    }
+    };
 
     const [estadoModal, cambiarEstadoModal] = useState(false);
 
     const buttonFuncion = () =>{
         cambiarEstadoModal(!estadoModal)
-    } /* paso las acciones de onclick ya que sin esto no funciona */
+    }; /* paso las acciones de onclick ya que sin esto no funciona */
 
     return(
         <>
@@ -36,6 +40,7 @@ export const NavBar = () =>{
                     <Link to="/miEspacio">Mi espacio</Link> {" "}
                     <Link to="/contacto">Contacto</Link> {" "}
                     <Link to="/about">Sobre Mi</Link> {" "}
+                    {startAdminService ? <Link to="/Admin">Admin</Link> : '' }
                     <div className="nav-login-movil"> {/* Solo es visible en modo movil */}
                             <ButtonReact metodoModal={buttonFuncion} title="Login" />
                     </div>
@@ -47,7 +52,6 @@ export const NavBar = () =>{
                         title="Login" 
                     ></ButtonReact>  
                 </div>
-                
                 <div className="burger">
                     <BurgerButton cliked={cliked} handleClick={handleClick} />
                 </div>
