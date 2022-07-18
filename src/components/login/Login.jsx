@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import { Stack, Container, Form, Button  } from 'react-bootstrap';
+import { Stack, Container, Form, Button } from 'react-bootstrap';
 
 import firebaseApp from '../../backEnd/credenciales';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
 import { async } from '@firebase/util';
+
 
 const auth = getAuth(firebaseApp);
 
@@ -16,16 +17,10 @@ export const Login = () => {
     const correo = e.target.formBasicEmail.value;
     const pass = e.target.formBasicPassword.value;
     /* SOLO SE IMPLEMENTO UN INICIO DE SESION NO SE REQUIERE USERS MAS QUE LOS ADMINS */
+    console.log(correo, pass);
     signInWithEmailAndPassword(auth, correo, pass);
-  }
-  
 
-
-
-
-
-
-
+  } 
   return (
     <>
         <Container>

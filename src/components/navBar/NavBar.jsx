@@ -7,18 +7,22 @@ import Modal from "../modal/Modal";
 import Login from "../login/Login";
 /* import Modal from "../modal/Modal"; */
 
-export const NavBar = () =>{
+
+
+
+export const NavBar = (startAdminService) =>{
+
     const[cliked, setCliked] = useState(false);
     
     const handleClick = () => {
         setCliked(!cliked);
-    }
+    };
 
     const [estadoModal, cambiarEstadoModal] = useState(false);
 
     const buttonFuncion = () =>{
         cambiarEstadoModal(!estadoModal)
-    } /* paso las acciones de onclick ya que sin esto no funciona */
+    }; /* paso las acciones de onclick ya que sin esto no funciona */
 
     return(
         <>
@@ -28,15 +32,17 @@ export const NavBar = () =>{
                 </div>
 
                 <div className={`links ${cliked ? 'active' : '' }`}>
+                    <div className="nav-logo-movil">
+                        <h1>Léete La Vida</h1>
+                    </div>
                     <Link to="/">Home</Link> {" "}
                     <Link to="/resenas">Reseñas</Link> {" "}
                     <Link to="/miEspacio">Mi espacio</Link> {" "}
                     <Link to="/contacto">Contacto</Link> {" "}
                     <Link to="/about">Sobre Mi</Link> {" "}
+                    {startAdminService ? <Link to="/Admin">Admin</Link> : '' }
                     <div className="nav-login-movil"> {/* Solo es visible en modo movil */}
-                        <Link to="/login">
-                            <ButtonReact title="Login" />
-                        </Link>
+                            <ButtonReact metodoModal={buttonFuncion} title="Login" />
                     </div>
                 </div>
 
@@ -46,7 +52,6 @@ export const NavBar = () =>{
                         title="Login" 
                     ></ButtonReact>  
                 </div>
-                
                 <div className="burger">
                     <BurgerButton cliked={cliked} handleClick={handleClick} />
                 </div>
@@ -79,8 +84,8 @@ const NavConteiner = styled.nav `
     justify-content: space-between;
     z-index: 100;
     .navLogo h1{
-        font-weight: 400;
-        font-size: 30px;
+        font-size: 40px;
+        font-family: 'The Nautigal', cursive;
     }
 
     a{
@@ -118,7 +123,7 @@ const NavConteiner = styled.nav `
         position: absolute;
         margin-left: auto;
         margin-right: auto;
-        top: 30%;
+        top: 20%;
         left: 0;
         right: 0;
         text-align: center;
@@ -144,6 +149,17 @@ const NavConteiner = styled.nav `
         @media(min-width: 768px){
             display: none;
         }
+        margin-top: 50px;
+    }
+    .nav-logo-movil{
+        @media(min-width: 768px){
+            display: none;
+        }
+        color: whitesmoke;
+        /* margin-bottom: 10%; */
+        font-family: 'The Nautigal', cursive;
+        font-size: large;
+
     } 
 `
 const BgDiv = styled.div`

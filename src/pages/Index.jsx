@@ -8,9 +8,9 @@ import { Bar } from "../components/bar/Bar";
 import Modal from "../components/modal/Modal";
 // import NavBar from "../components/navBar/NavBar";
 
-export const Index = () => {
+export const Index = (isAdmin) => {
     return (
-        <MainLayout>  
+        <MainLayout showAdminPanel={isAdmin}>  
            {/*  <Modal modalTitle="Login">
                 <h1>Hola</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, illo debitis! Quaerat nam velit laboriosam esse animi optio est iste commodi consequuntur excepturi, saepe placeat quae dolores corrupti. Cum, iure?</p>
