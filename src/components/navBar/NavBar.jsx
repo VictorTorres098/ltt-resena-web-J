@@ -11,7 +11,7 @@ import Login from "../login/Login";
 
 
 export const NavBar = (startAdminService) =>{
-
+    console.log(startAdminService);
     const[cliked, setCliked] = useState(false);
     
     const handleClick = () => {
@@ -40,7 +40,7 @@ export const NavBar = (startAdminService) =>{
                     <Link to="/miEspacio">Mi espacio</Link> {" "}
                     <Link to="/contacto">Contacto</Link> {" "}
                     <Link to="/about">Sobre Mi</Link> {" "}
-                    {startAdminService ? <Link to="/Admin">Admin</Link> : '' }
+                    {startAdminService.isAdmin && (<Link to="/admin">Admin</Link>)}
                     <div className="nav-login-movil"> {/* Solo es visible en modo movil */}
                             <ButtonReact metodoModal={buttonFuncion} title="Login" />
                     </div>

@@ -4,6 +4,9 @@ import{
   Routes,
   Route,
 } from "react-router-dom";
+/* paths */
+import { ABOUT, ADMIN, CONTACTO, HOME, LOGIN, LOGOUT, MIESPACIO, RESENAS } from "./backEnd/routes/paths";
+
 import Index from "./pages/Index";
 import Resenas from "./pages/Resenas";
 import MiEspacio from "./pages/MiEspacio";
@@ -11,6 +14,7 @@ import Contacto from "./pages/Contacto";
 import About from "./pages/About";
 import AdminPanel from "./pages/AdminPanel";
 import Login  from "./components/login/Login";
+import { Logout } from "./components/login/Logout";
 
 import firebaseApp from "./backEnd/credenciales";
 import {getAuth, onAuthStateChanged} from "firebase/auth";
@@ -36,13 +40,14 @@ function App() {
       
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Index isAdmin={adminGlobal} />}/>
-      <Route path="/resenas" element={<Resenas />}/>
-      <Route path="/miEspacio" element={<MiEspacio />}/>
-      <Route path="/contacto" element={<Contacto />}/>
-      <Route path="/about" element={<About />}/>
-      <Route path="/Admin" element={<AdminPanel />}/> {/* Proteger Rutas Publicas y Privadas con react router dom v6 */}
-      <Route path="/login" element={<Login />}/>  
+      <Route path={HOME} element={<Index isAdmin={adminGlobal} />}/>
+      <Route path={RESENAS} element={<Resenas />}/>
+      <Route path={MIESPACIO} element={<MiEspacio />}/>
+      <Route path={CONTACTO} element={<Contacto />}/>
+      <Route path={ABOUT} element={<About />}/>
+      <Route path={LOGIN} element={<Login />}/> 
+      <Route path={ADMIN} element={<AdminPanel />}/> {/* Proteger Rutas Publicas y Privadas con react router dom v6 */}
+      <Route path={LOGOUT} element={<Logout />}/>
     </Routes>
   </BrowserRouter>
     </>
